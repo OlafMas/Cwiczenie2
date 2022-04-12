@@ -7,7 +7,7 @@ import numpy as np
 import pyransac3d
 
 
-def read_csv(name, nl="\n", dl=","):
+def open_csv(name, nl="\n", dl=","):
     punkty = []
     with open(name, newline=nl) as csvfile:
         csvreader = reader(csvfile, delimiter=dl)
@@ -16,7 +16,7 @@ def read_csv(name, nl="\n", dl=","):
     return punkty
 
 
-chmura = read_csv("Cylinder.xyz")
+chmura = open_csv("Cylinder.xyz")
 
 
 clusterer = KMeans(n_clusters=3)
